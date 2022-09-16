@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Text?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="475.0" prefWidth="760.0" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/18" fx:controller="br.com.fiap.PrimaryController">
+  <tabs>
+    <Tab text="Cadastro de receita">
+         <content>
+            <AnchorPane prefHeight="436.0" prefWidth="760.0">
+               <children>
+                  <GridPane layoutX="37.0" layoutY="29.0" prefHeight="364.0" prefWidth="535.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="292.0" minWidth="10.0" prefWidth="112.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="503.0" minWidth="10.0" prefWidth="421.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="229.0" minHeight="0.0" prefHeight="68.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="229.0" minHeight="0.0" prefHeight="68.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="237.0" minHeight="0.0" prefHeight="61.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="237.0" minHeight="0.0" prefHeight="61.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="314.0" minHeight="10.0" prefHeight="67.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="314.0" minHeight="10.0" prefHeight="67.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="314.0" minHeight="10.0" prefHeight="58.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="314.0" minHeight="10.0" prefHeight="58.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="314.0" minHeight="10.0" prefHeight="69.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="314.0" minHeight="10.0" prefHeight="69.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="314.0" minHeight="10.0" prefHeight="120.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Titulo:" GridPane.halignment="CENTER" />
+                        <TextField fx:id="textFieldIdTitulo" prefHeight="25.0" prefWidth="334.0" GridPane.columnIndex="1" />
+                        <TextField fx:id="textFieldIdIngredientes" prefHeight="32.0" prefWidth="484.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ingredientes:" wrappingWidth="94.13671875" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                        <TextField fx:id="textFieldIdPreparo" prefHeight="52.0" prefWidth="493.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Modo de preparo:" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+                        <TextField fx:id="textFieldIdCusto" prefHeight="19.0" prefWidth="484.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Custo:" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+                        <ChoiceBox fx:id="choiceBoxCategoria" prefHeight="25.0" prefWidth="225.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                        <Button fx:id="buttonSalvar" mnemonicParsing="false" onAction="#salvar" prefHeight="45.0" prefWidth="148.0" text="Salvar Receita" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Categoria:" GridPane.halignment="CENTER" GridPane.rowIndex="8" />
+                        <CheckBox fx:id="checkBoxFavorito" mnemonicParsing="false" prefHeight="17.0" prefWidth="130.0" text="Meus favoritos" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="10" />
+                        <Separator prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Separator prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Separator prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                        <Separator prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <Separator prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+         </content>
+    </Tab>
+    <Tab text="Consultar Receita">
+         <content>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <BorderPane prefHeight="396.0" prefWidth="635.0">
+                     <top>
+                        <ButtonBar prefHeight="40.0" prefWidth="519.0" BorderPane.alignment="CENTER">
+                          <buttons>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Selecionar por:" wrappingWidth="217.32421875" />
+                              <Button fx:id="buttonTitulo" mnemonicParsing="false" onAction="#titulo" text="Titulo" />
+                            <Button fx:id="buttonCusto" mnemonicParsing="false" onAction="#custo" text="Custo" />
+                          </buttons>
+                        </ButtonBar>
+                     </top>
+                     <center>
+                        <ListView fx:id="listView" prefHeight="326.0" prefWidth="635.0" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+               </children>
+            </AnchorPane>
+         </content>
+    </Tab>
+      <Tab text="Meus favoritos">
+         <content>
+            <AnchorPane prefHeight="322.0" prefWidth="149.0">
+               <children>
+                  <BorderPane layoutX="14.0" layoutY="9.0" prefHeight="429.0" prefWidth="749.0">
+                     <center>
+                        <ListView fx:id="listView2" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+  </tabs>
+</TabPane>
